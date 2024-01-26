@@ -1,4 +1,5 @@
-package lab_semana2;
+package lab_herencia;
+import javax.swing.JOptionPane;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -7,7 +8,7 @@ package lab_semana2;
 
 /**
  *
- * @author vanes
+ * @author adalb
  */
 public abstract class Plan {
     public abstract double pagoMensual(int mins,int msgs);

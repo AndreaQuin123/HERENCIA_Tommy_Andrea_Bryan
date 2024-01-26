@@ -12,14 +12,14 @@ import javax.swing.JOptionPane;
  * @author Tommy Lee Pon
  */
 public class tigoMain extends javax.swing.JFrame {
-    Tigo tigo=new Tigo();
+    Tigo tigo;
     
     
     /**
      * Creates new form tigoMain
      */
-    public tigoMain() {
-        
+    public tigoMain(Tigo tigo) {
+        this.tigo=tigo;
         initComponents();
     }
 
@@ -67,6 +67,11 @@ public class tigoMain extends javax.swing.JFrame {
         getContentPane().add(agregarAmigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 280, 330, 70));
 
         pagarPlan.setContentAreaFilled(false);
+        pagarPlan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pagarPlanActionPerformed(evt);
+            }
+        });
         getContentPane().add(pagarPlan, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 180, 330, 70));
 
         agregarPlan.setContentAreaFilled(false);
@@ -85,8 +90,7 @@ public class tigoMain extends javax.swing.JFrame {
 
     private void agregarAmigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarAmigoActionPerformed
         // TODO add your handling code here:
-        String tipo=JOptionPane.showInputDialog(null, "Que tipo?");
-        new agregarPlanFORM().isVisible(true);
+        
         
     }//GEN-LAST:event_agregarAmigoActionPerformed
 
@@ -101,7 +105,14 @@ public class tigoMain extends javax.swing.JFrame {
 
     private void agregarPlanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarPlanActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_agregarPlanActionPerformed
+
+    private void pagarPlanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pagarPlanActionPerformed
+        // TODO add your handling code here:
+        new pagoPlanFORM(tigo).setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_pagarPlanActionPerformed
 
     /**
      * @param args the command line arguments
@@ -131,9 +142,10 @@ public class tigoMain extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
+        Tigo tigo=new Tigo();
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new tigoMain().setVisible(true);
+                new tigoMain(tigo).setVisible(true);
             }
         });
     }

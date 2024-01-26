@@ -1,14 +1,17 @@
+
+package lab_herencia;
+
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package lab_semana2;
-
-import java.util.ArrayList;
 
 /**
  *
- * @author vanes
+ * @author adalb
  */
 public class Tigo {
         
@@ -18,7 +21,7 @@ public class Tigo {
     public Plan cp=new PlanIphone(0,"","");
     public Plan ch=new PlanSamsung(0,"","");
         
-    public Tigo(ArrayList<Plan> planes){
+    public Tigo(){
         this.planes=new ArrayList<>();
     }
     
