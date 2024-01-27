@@ -1,4 +1,4 @@
-package lab_herencia;
+package lab_semana2;
 import javax.swing.JOptionPane;
 
 /*

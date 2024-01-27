@@ -1,4 +1,6 @@
-package lab_herencia;
+package lab_semana2;
+
+
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
@@ -12,6 +14,7 @@ import javax.swing.JOptionPane;
  * @author adalb
  */
 public class PlanSamsung extends Plan{
+    
     public String pin;
     public ArrayList<String> bbm;
     
@@ -53,15 +56,14 @@ public class PlanSamsung extends Plan{
                 coincidencia=true;
             }
         }
-        if(!coincidencia){
+        if (!coincidencia) {
             bbm.add(pinAmigo);
             JOptionPane.showMessageDialog(null, "Se ha agregado exitosamente");
         }
     }
-    
-    public String getPin(){
+
+    public String getPin() {
         return pin;
     }
-    
-    
+
 }
