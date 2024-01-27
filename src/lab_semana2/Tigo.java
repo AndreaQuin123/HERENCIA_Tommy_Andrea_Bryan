@@ -67,30 +67,31 @@ public class Tigo {
     }
 
     public void agregarAmigo(int numeroTel, String pin) {
-        Plan amigo = null;
+    Plan amigo = null;
 
-        for (Plan plan : planes) {
-            if (plan.getTelefono() == numeroTel) {
-                amigo = plan;
-                break;
-            }
+    for (Plan plan : planes) {
+        if (plan.getTelefono() == numeroTel) {
+            amigo = plan;
+            break;
         }
-        
-        if (amigo == null) {
-            JOptionPane.showMessageDialog(null, "No existe un plan con el número " + numeroTel);
-            return;
-        }
+    }
 
-        if (amigo instanceof PlanSamsung) {
-            if (((PlanSamsung) amigo).getPin().equals(pin)) {
-                JOptionPane.showMessageDialog(null, "Esta persona ya está en su lista de amigos.");
-            } else {
-                ((PlanSamsung) amigo).agregarPinAmigo(pin);
-                JOptionPane.showMessageDialog(null, "Se ha agregado exitosamente.");
-            }
+    if (amigo == null) {
+        JOptionPane.showMessageDialog(null, "No existe un plan con el número " + numeroTel);
+        return;
+    }
+
+    if (amigo instanceof PlanSamsung) {
+        PlanSamsung samsungAmigo = (PlanSamsung) amigo;
+        if (samsungAmigo.getPin().equals(pin)) {
+            JOptionPane.showMessageDialog(null, "Esta persona ya está en su lista de amigos.");
         } else {
-            JOptionPane.showMessageDialog(null, "Este plan no es de tipo Samsung y no se pueden agregar amigos.");
+            samsungAmigo.agregarPinAmigo(pin);
+            JOptionPane.showMessageDialog(null, "Se ha agregado exitosamente.");
         }
+    } else {
+        JOptionPane.showMessageDialog(null, "Este plan no es de tipo Samsung y no se pueden agregar amigos.");
+    }
     }
 
     public String lista() {

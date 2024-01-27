@@ -88,7 +88,7 @@ public class tigoMain extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void agregarAmigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarAmigoActionPerformed
-        AgregarAmigoFORM pasar = new AgregarAmigoFORM(tigo, planes);
+        AgregarAmigo_FORM pasar = new AgregarAmigo_FORM(tigo, planes);
         pasar.setVisible(true);
         this.setVisible(false);
 
